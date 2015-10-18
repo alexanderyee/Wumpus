@@ -4,5 +4,5 @@ package model;
  * Alex Yee
  */
 public enum Element {
-	HUNTER, WUMPUS, BLOOD, SLIME, GOOP, SLIMEPIT
+	HUNTER, WUMPUS, BLOOD, SLIME, GOOP, PIT, NOTHING 
 }
