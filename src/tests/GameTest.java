@@ -1,8 +1,10 @@
+package tests;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class WumpusTest {
+public class GameTest {
 
 	@Test
 	public void test() {
