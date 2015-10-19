@@ -6,7 +6,6 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 

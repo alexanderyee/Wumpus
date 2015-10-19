@@ -28,6 +28,7 @@ public class WumpusGUI extends JFrame {
 	private Game game;
 	private JTabbedPane tPane;
 	private JPanel controller;
+	private JPanel controller2;
 	private BasicArrowButton mUp;
 	private BasicArrowButton mDown;
 	private BasicArrowButton mLeft;
@@ -40,7 +41,9 @@ public class WumpusGUI extends JFrame {
 	private JLabel shoot;
 	
 	public WumpusGUI() {
+		this.setTitle("Hunt The Wumpus - Alex Yee");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(null);
 		setSize(1000, 500);
 		setLocation(100, 30);
 		game = new Game();
@@ -49,16 +52,27 @@ public class WumpusGUI extends JFrame {
 		tPane = new JTabbedPane();
 		tPane.add("Images", imagePanel);
 		tPane.add("Text", textPanel);
-		add(tPane, BorderLayout.CENTER);
+		tPane.setSize(800,500);
+		tPane.setLocation(200, 0);
+		add(tPane);
 		game.addObserver(imagePanel);
 		game.addObserver(textPanel);
+		
 		setControllerLayout();
-		add(controller, BorderLayout.WEST);
+		add(controller);
+		add(controller2);
 	}
 	private void setControllerLayout() {
 		controller = new JPanel();
+		controller.setLocation(0,300);
+		controller.setSize(200,100);
+		controller2 = new JPanel();
+		controller2.setLocation(0, 400);
+		controller2.setSize(200,100);
 		BoxLayout bl = new BoxLayout(controller, BoxLayout.PAGE_AXIS);
+		BoxLayout bl2 = new BoxLayout(controller2, BoxLayout.PAGE_AXIS);
 		controller.setLayout(bl);
+		controller2.setLayout(bl2);
 		FlowLayout layout1 = new FlowLayout();
 		JPanel jp1 = new JPanel();
 		JPanel jp2 = new JPanel();
@@ -76,7 +90,7 @@ public class WumpusGUI extends JFrame {
 		jp7.setLayout(layout1);
 		move = new JLabel("Move");
 		shoot = new JLabel("Shoot");
-		
+		// moving buttons
 		mUp = new BasicArrowButton(BasicArrowButton.NORTH);
 		mUp.addActionListener(new ActionListener(){
 
@@ -165,9 +179,9 @@ public class WumpusGUI extends JFrame {
 		controller.add(jp1);
 		controller.add(jp2);
 		controller.add(jp3);
-		controller.add(jp4);
-		controller.add(jp5);
-		controller.add(jp6);
-		controller.add(jp7);
+		controller2.add(jp4);
+		controller2.add(jp5);
+		controller2.add(jp6);
+		controller2.add(jp7);
 	}
 }
