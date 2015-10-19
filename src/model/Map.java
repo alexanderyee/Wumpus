@@ -78,7 +78,7 @@ public class Map {
 		String result = "";
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				result += "[" + grid[i][j].toString() + "] ";
+				result += "[" + grid[i][j].toString() + "]  ";
 			}
 			result += "\n";
 		}

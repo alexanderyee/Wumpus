@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.junit.Test;
 
+import model.Direction;
 import model.Game;
 
 public class GameTest {
@@ -13,6 +14,7 @@ public class GameTest {
 		Random r = new Random();
 		Game g = new Game(r);
 		System.out.println(g.map.toString());
+		
 	}
 
 }
