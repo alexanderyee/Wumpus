@@ -1,14 +1,18 @@
 package tests;
 
-import static org.junit.Assert.*;
+import java.util.Random;
 
 import org.junit.Test;
+
+import model.Game;
 
 public class GameTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		Random r = new Random();
+		Game g = new Game(r);
+		System.out.println(g.map.toString());
 	}
 
 }
