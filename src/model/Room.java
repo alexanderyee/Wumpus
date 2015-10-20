@@ -1,5 +1,5 @@
 package model;
-
+//Alex Yee
 public class Room {
 	private Element e;
 	private Element e2;
@@ -29,28 +29,48 @@ public class Room {
 		if (this.e==Element.BLOOD && e==Element.SLIME)
 			this.e = Element.GOOP;
 		else {
-			this.e2 = this.e;
+			if (!(e == Element.NOTHING) && (e2 == Element.NOTHING))
+				this.e2 = this.e;
 			this.e = e;
 		}
 	}
 
 	@Override
 	public String toString() {
-		if (this.e==Element.BLOOD)
-			return "B";
-		else if (this.e==Element.GOOP)
-			return "G";
-		else if (this.e==Element.WUMPUS)
-			return "W";
-		else if (this.e==Element.HUNTER)
-			return "O";
-		else if (this.e==Element.PIT)
-			return "P";
-		else if (this.e==Element.SLIME)
-			return "S";
-		else if (this.e==Element.NOTHING && this.visibility)
-			return " ";
-		else
+		if (!this.visibility)
 			return "X";
+		else if (this.e==Element.BLOOD || e2==Element.BLOOD)
+			return "B";
+		else if (this.e==Element.GOOP || e2==Element.GOOP)
+			return "G";
+		else if (this.e==Element.WUMPUS || e2==Element.WUMPUS)
+			return "W";
+		else if (this.e==Element.HUNTER || e2==Element.HUNTER)
+			return "O";
+		else if (this.e==Element.PIT || e2==Element.PIT)
+			return "P";
+		else if (this.e==Element.SLIME || e2==Element.SLIME)
+			return "S";
+		else
+			return " ";
+		
+	}
+	public String toStringWhenDone() {
+		
+		 if (this.e==Element.BLOOD || e2==Element.BLOOD)
+			return "B";
+		else if (this.e==Element.GOOP || e2==Element.GOOP)
+			return "G";
+		else if (this.e==Element.WUMPUS || e2==Element.WUMPUS)
+			return "W";
+		else if (this.e==Element.HUNTER || e2==Element.HUNTER)
+			return "O";
+		else if (this.e==Element.PIT || e2==Element.PIT)
+			return "P";
+		else if (this.e==Element.SLIME || e2==Element.SLIME)
+			return "S";
+		else
+			return " ";
+		
 	}
 }

@@ -15,7 +15,7 @@ import javax.swing.plaf.basic.BasicArrowButton;
 
 import model.Direction;
 import model.Game;
-
+//Alex Yee
 public class WumpusGUI extends JFrame {
 
 	public static void main(String[] args) {
@@ -44,7 +44,7 @@ public class WumpusGUI extends JFrame {
 		this.setTitle("Hunt The Wumpus - Alex Yee");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
-		setSize(1000, 500);
+		setSize(1000, 560);
 		setLocation(100, 30);
 		game = new Game();
 		imagePanel = new GraphicalView(game);
@@ -52,7 +52,7 @@ public class WumpusGUI extends JFrame {
 		tPane = new JTabbedPane();
 		tPane.add("Images", imagePanel);
 		tPane.add("Text", textPanel);
-		tPane.setSize(800,500);
+		tPane.setSize(800,560);
 		tPane.setLocation(200, 0);
 		add(tPane);
 		game.addObserver(imagePanel);
@@ -96,7 +96,9 @@ public class WumpusGUI extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mUp.setEnabled(false);
 				game.moveHunter(Direction.NORTH);
+				mUp.setEnabled(true);
 			}
 			
 		});
@@ -105,7 +107,9 @@ public class WumpusGUI extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mDown.setEnabled(false);
 				game.moveHunter(Direction.SOUTH);
+				mDown.setEnabled(true);
 			}
 			
 		});
@@ -114,7 +118,9 @@ public class WumpusGUI extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mLeft.setEnabled(false);
 				game.moveHunter(Direction.WEST);
+				mLeft.setEnabled(true);
 			}
 			
 		});
@@ -123,7 +129,9 @@ public class WumpusGUI extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mRight.setEnabled(false);
 				game.moveHunter(Direction.EAST);
+				mRight.setEnabled(true);
 			}
 			
 		});

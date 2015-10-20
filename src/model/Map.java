@@ -2,7 +2,7 @@ package model;
 
 import java.util.Arrays;
 import java.util.Random;
-
+//Alex Yee
 public class Map {
 	private Room[][] grid;
 	private Random r;
@@ -79,6 +79,16 @@ public class Map {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				result += "[" + grid[i][j].toString() + "]  ";
+			}
+			result += "\n";
+		}
+		return result;
+	}
+	public String toStringDone() {
+		String result = "";
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				result += "[" + grid[i][j].toStringWhenDone() + "]  ";
 			}
 			result += "\n";
 		}
